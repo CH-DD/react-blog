@@ -1,3 +1,16 @@
+# React Blog 
+## A project created to recap the fundamentals of React
+
+Following this YouTube tutorial by The Net Ninja:
+
+[Full Modern React Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d)  
+
+**^ Up to vid 8 - useState**
+
+
+
+-------------------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
