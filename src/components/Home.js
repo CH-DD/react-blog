@@ -1,11 +1,11 @@
 const Home = () => {
 
     const handleClick = (eventObject) => {
-        console.log("Hi there", eventObject);
+        console.log("Hi there", eventObject);  // eventObject automatically available when an event occurs
     }
 
-    const handleClickAgain = (name) => {
-        console.log("Hi " + name);
+    const handleClickAgain = (name, eventObject) => {
+        console.log("Hi " + name, eventObject.target);
     }
 
     return ( 
@@ -17,9 +17,7 @@ const Home = () => {
                 </p>
 
                 <p>
-                    <button onClick={ 
-                        () => { handleClickAgain("Bill") }
-                    }>
+                    <button onClick={(eventObject) => handleClickAgain("Bill", eventObject)}>
                         Click me again
                     </button>
 
