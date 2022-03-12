@@ -5,9 +5,6 @@ Following this YouTube tutorial by The Net Ninja:
 
 [Full Modern React Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d)  
 
-**^ Up to vid 8 - useState**
-
-
 
 -------------------------
 

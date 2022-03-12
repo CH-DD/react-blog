@@ -1,32 +1,27 @@
 import { useState } from "react";
 
+// create a 'reactive' list of blog posts using useState
+
 const Home = () => {
 
-    // useState hook used for 'reactive' values that may change at some point
-    // how: use array destructuring to grab 2 values that the hook returns to us: 1. initial value (eg. name) 2. function used to change the value (eg. setName)
-    // value can be any type. ie. string, number, array, object, boolean
-
-    const [name, setName] = useState("Mario"); 
-    const [age, setAge] = useState(25);
-        
-
-    // useState triggers React to re-render the component and update the values on click
-    const handleClick = (eventObject) => {
-        setName("Luigi");  
-        setAge(30);
-    }
+const [articles, setArticles] = useState([
+    { id: 1, author: "Mario", title: "My new website", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
+    { id: 2, author: "Yoshi", title: "Welcome party!", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
+    { id: 3, author: "Mario", title: "Web development top tips", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."}
+]);
 
     return (
         <main className="home">
             <section className="content">
+                {/* cycle through each item in articles array - all must have a unique key ed. id
+                */}
 
-                <h2>Homepage</h2>
-                <p>{ name } is { age } years old.</p>
-
-                <p>
-                    <button onClick={handleClick}>Click me</button>
-                </p>
-                
+                {articles.map((article) => (
+                    <article className="article-preview" key={ article.id }>
+                        <h2>{ article.title }</h2>
+                        <p>By { article.author }</p>
+                    </article>
+                ))}
             </section>
         </main>
      );
