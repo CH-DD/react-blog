@@ -1,7 +1,7 @@
 import { useState } from "react";
+import ArticlesList from "./ArticlesList";
 
 // create a 'reactive' list of blog posts using useState
-
 const Home = () => {
 
 const [articles, setArticles] = useState([
@@ -12,17 +12,12 @@ const [articles, setArticles] = useState([
 
     return (
         <main className="home">
-            <section className="content">
-                {/* cycle through each item in articles array - all must have a unique key ed. id
-                */}
+            <div className="content">
 
-                {articles.map((article) => (
-                    <article className="article-preview" key={ article.id }>
-                        <h2>{ article.title }</h2>
-                        <p>By { article.author }</p>
-                    </article>
-                ))}
-            </section>
+                {/* pass the articles data into a reusable 'ArticlesList' child component using props - as an object with key of 'articles' */}
+                <ArticlesList articles={articles} title="All Articles" />     
+
+            </div>
         </main>
      );
 }
