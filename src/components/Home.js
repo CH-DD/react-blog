@@ -14,8 +14,26 @@ const [articles, setArticles] = useState([
         <main className="home">
             <div className="content">
 
-                {/* pass the articles data into a reusable 'ArticlesList' child component using props - as an object with key of 'articles' */}
-                <ArticlesList articles={articles} title="All Articles" />     
+                {/* List all articles
+                - Pass props into 'ArticlesList' child component: articles array, title */}
+                <ArticlesList 
+                    articles={articles} 
+                    title="All Articles" 
+                />     
+
+                {/* Mario's articles 
+                - Pass props: filtered articles array (returned as new array), new title */}
+                <ArticlesList 
+                    articles={articles.filter((article) => article.author === "Mario")} 
+                    title="Mario's Articles" 
+                />  
+
+                {/* Yoshi's articles 
+                - Pass props: filtered articles array (returned as new array), new title */}
+                <ArticlesList 
+                    articles={articles.filter((article) => article.author === "Yoshi")} 
+                    title="Yoshi's Articles" 
+                />  
 
             </div>
         </main>
