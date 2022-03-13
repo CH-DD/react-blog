@@ -48,7 +48,6 @@ main .content {
 }
 
 /* nav */
-
 .navbar {
   display: flex;
   align-items: center;
@@ -124,8 +123,9 @@ select {
 	color: #2c2c2c;
 }
 
-/* fancy button effects */
+/* buttons & effects */
 button {
+  width: auto;
 	overflow: hidden;
 	transition: 0.2s transform ease-in-out;
 	will-change: transform;
@@ -134,7 +134,6 @@ button {
 	color: var(--col-bg);
 	font-weight: 500;
 	border-radius: 35px;
-  display:unset;
 }
 button::after {
 	background-color: var(--col-brand-tertiary);
@@ -157,4 +156,8 @@ button:hover::after {
 button:hover {
 	transform: scale(1);
 	will-change: transform;
+}
+button span.material-icons {
+  vertical-align: middle;
+  margin-right: 3px;
 }
