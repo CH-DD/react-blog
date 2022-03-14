@@ -5,6 +5,7 @@ Following this YouTube tutorial by The Net Ninja:
 
 [Full Modern React Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d)  
 
+Also see updated version of [React Router (6)](https://www.youtube.com/watch?v=WfpmvgVZD1A&list=PL4cUxeGkcC9h7F1LWaQ7MAI8ptg5VjvxJ)
 
 -------------------------
 

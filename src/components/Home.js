@@ -1,50 +1,14 @@
-import { useState, useEffect } from "react";
-import ArticlesList from "./ArticlesList";
+import useFetch from "../hooks/useFetch";   // custom hook
+import ArticlesList from "./ArticlesList";  // component
 
 
 const Home = () => {
 
-    // State values: 
-    // Initial list of articles. Data fetched from fake local API using 'json-server' package and data/dummy-db.json
-    const [articles, setArticles] = useState(null); // null will be updated when data is fetched 
+    // Fetch articles data 
+    // Use custom 'useFetch' hook: pass in custom url & rename returned 'data' variable to be 'articles'
+    const { data: articles, isLoading, error } = useFetch("http://localhost:8000/articles");
 
-    // Loading message whilst fetching data
-    const [isLoading, setIsLoading] = useState(true);  // initial value: true
-
-    // Error handling
-    const [error, setError] = useState(null);
-
-
-    // useEffect: fetch articles data from API
-    // function only fired once - on initial render (due to empty dependency array)
-    useEffect(() => {
-
-        // temporarily wrap fetch in 'setTimeout' to simulate a real web server
-        setTimeout(() => {  
-            fetch("http://localhost:8000/articles")
-
-                .then(response => {         // get response object 
-                    if(!response.ok) {      // catch data request errors
-                        return setError("We could not find the thing you wanted.");
-                    }
-                    return response.json(); // parse json --> object & return a promise
-                }) 
-                .then(data => {             // get returned data: array of objects 
-                    setArticles(data);      // update state with the fetched array
-                    setIsLoading(false);    // update loading message state
-                })
-                .catch((err) => {           // catch network connection errors
-                    // set error message
-                    setError("We seem to be experiencing connection issues.");
-                    // remove loading message: no longer required
-                    setIsLoading(false);
-                })
-                
-        }, 1000); // time delay in ms
-
-    }, []);   
-
-
+    // Render items on page
     return (
         <main className="home">
             <div className="content">
