@@ -5,7 +5,7 @@ import ArticlesList from "./ArticlesList";
 const Home = () => {
 
     // State: Stores data. 
-    // Initial 'reactive' list of articles
+    // Initial 'reactive' list of articles (this data has now been recreated as a fake local API using 'json-server' package and data/dummy-db.json)
     const [articles, setArticles] = useState([
         { id: 1, author: "Mario", title: "My new website", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
         { id: 2, author: "Yoshi", title: "Welcome party!", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
@@ -28,16 +28,12 @@ const Home = () => {
     // To define when exactly the function should be rendered (ie. not every render), include optional 'dependency array' as a second argument. An empty array means first render only.
     useEffect(() => {
         console.log("use effect ran");
-        console.log(name);
-    }, [name]);  // only run when 'name' changes
+    }, []); 
 
 
     return (
         <main className="home">
             <div className="content">
-
-                <button onClick={ () => setName("Luigi") }>Change Name</button>
-                <p>{ name }</p>
 
                 {/* List all articles
                 - Pass props into 'ArticlesList' child component: articles array, title, handleDelete function */}
