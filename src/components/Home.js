@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ArticlesList from "./ArticlesList";
 
 
 const Home = () => {
 
-    // State: Initial 'reactive' list of articles
+    // State: Stores data. Initial 'reactive' list of articles
     const [articles, setArticles] = useState([
         { id: 1, author: "Mario", title: "My new website", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
         { id: 2, author: "Yoshi", title: "Welcome party!", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
@@ -15,9 +15,19 @@ const Home = () => {
     // - 1. Create new list of articles that DO NOT have the same id value as article being deleted. Initial array not mutated.
     // - 2. Pass 'newArticles' as the new 'setArticles' value 
     const handleDelete = (id) => {
-        const newArticles = articles.filter(article => article.id != id);
+        const newArticles = articles.filter(article => article.id !== id);
         setArticles(newArticles);   
     }
+
+    // useEffect: runs a function on every render (passed in as an argument).  ie. when component first loads, and whenever 'state' data changes
+    // Common uses - to fetch data, or communicate with auth. service (aka 'side effects')
+    // Be careful changing state in here - can create infinite loop
+    useEffect(() => {
+        // test values
+        console.log("use effect ran");
+        console.log(articles);    
+    });
+
 
     return (
         <main className="home">
