@@ -1,6 +1,6 @@
-// Note: using 'destructuring' in the ArticlesList argument allows easy access to props passed from 'Home' parent component - the 'articles' array, 'title', and 'handleDelete' function. 
+// Note: 'destructuring' in the ArticlesList argument allows easy access to props passed from 'Home' parent component 
 
-const ArticlesList = ({ articles, title, handleDelete }) => {
+const ArticlesList = ({ articles, title }) => {
 
     return (  
         
@@ -12,10 +12,6 @@ const ArticlesList = ({ articles, title, handleDelete }) => {
                 <article className="article-preview" key={ article.id }>
                     <h2>{ article.title }</h2>
                     <p>By { article.author }</p>
-
-                    {/* give button a click event handler */}
-
-                    <button onClick={() => handleDelete(article.id)}><span className="material-icons">delete</span> Delete</button>
                 </article>
             ))}
         </section>
