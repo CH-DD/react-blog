@@ -81,8 +81,31 @@ font-size: 16px;
   margin-right: 3px;
 }
 
+/* home & articles pages */
 
-/* home */
+.loading {
+  width: 100%;
+  text-align: center;
+  margin-top: 30vh;
+}
+.loading .material-icons {
+  font-size: 48px;
+  color: var(--col-brand-primary);
+  animation: rotation 2s infinite linear;  /* rotate loading icon */
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.loading .text {
+  display: block;
+  font-size: 0.75em;
+}
+
 .article-preview {
   padding:  1rem 2rem;
   margin: 2rem 0;
