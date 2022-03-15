@@ -19,9 +19,13 @@ const useFetch = (url) => {
     // function only fired once - on initial render (due to empty dependency array)
     useEffect(() => {
 
+        // Cleanup function variable: used to stop fetch requests when not needed. ie. switching away from articles page before data is loaded. 
+        // Uses 'signal' argument in the fetch parameters, and returned function later.
+        const abortController = new AbortController();
+
         // temporarily wrap fetch in 'setTimeout' to simulate a real web server
         setTimeout(() => {  
-            fetch(url)
+            fetch(url, { signal: abortController.signal })
 
                 .then(response => {         // get response object 
                     if(!response.ok) {      // catch data request errors
@@ -34,13 +38,22 @@ const useFetch = (url) => {
                     setIsLoading(false);    // update loading message state
                 })
                 .catch((err) => {           // catch network connection errors
-                    // set error message
-                    setError("We seem to be experiencing connection issues.");
-                    // remove loading message: no longer required
-                    setIsLoading(false);
+
+                    // if fetch is aborted (by switching pages), don't change state
+                    if (err.name === "AbortError") {
+                        console.log("Data fetching aborted!")
+                    } else {
+                        // set error message
+                        setError("We seem to be experiencing connection issues.");
+                        // remove loading message: no longer required
+                        setIsLoading(false);
+                    }
                 })
                 
         }, 1000); // time delay in ms
+
+        // Cleanup function: stop the fetch
+        return () => abortController.abort();
 
     }, [url]);  // whenever url changes, re-run the function to get data 
 
