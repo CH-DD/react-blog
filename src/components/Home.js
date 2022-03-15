@@ -1,5 +1,5 @@
-import useFetch from "../hooks/useFetch";   // custom hook
-import ArticlesList from "./ArticlesList";  // component
+import useFetch from "../custom-hooks/useFetch";    // custom hook
+import ArticlesList from "./ArticlesList";          // component
 
 
 const Home = () => {
@@ -11,28 +11,29 @@ const Home = () => {
     // Render items on page
     return (
         <main className="home">
+
+            {/* Error message (if any exist) */}
+            {error && 
+                <div id="error">
+                    <h2>
+                        <span className="material-icons">error_outline</span>
+                        <span className="text">Oops! { error }</span>
+                    </h2>
+                    <p>Maybe try again?</p>
+                </div>
+            }
+
+            {/* Loading message */}
+            {isLoading && 
+                <div id="loading">
+                    <h2>
+                        <span className="material-icons">sync</span>
+                        <span className="text">Loading...</span>
+                    </h2>
+                </div>
+            }
+
             <div className="content">
-
-                {/* Error message (if any exist) */}
-                {error && 
-                    <div id="error">
-                        <h2>
-                            <span className="material-icons">error_outline</span>
-                            <span className="text">Oops! { error }</span>
-                        </h2>
-                        <p>Maybe try again?</p>
-                    </div>
-                }
-
-                {/* Loading message */}
-                {isLoading && 
-                    <div id="loading">
-                        <h2>
-                            <span className="material-icons">sync</span>
-                            <span className="text">Loading...</span>
-                        </h2>
-                    </div>
-                }
 
                 {/* List articles
                 - 'Conditional template': code to right of the logical AND (&&) is only output if both 'articles' and 'ArticlesList' evaluate to true. ie. 'articles' data has been fetched and the initial 'null' value is overwritten.
