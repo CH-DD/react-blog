@@ -19,7 +19,7 @@ const ArticlesList = ({ articles, title }) => {
                     >
                         <article key={ article.id }>
                             <h2>{ article.title }</h2>
-                            <p>By { article.author }</p>
+                            <p className="author">By { article.author }</p>
                        
                         </article>
                     </Link>

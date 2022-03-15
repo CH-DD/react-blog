@@ -128,8 +128,21 @@ font-size: 16px;
   .articles-list a.article-preview article p {
     color: var(--col-brand-secondary);
   }
- 
 
+  .article p.author {
+    color: var(--col-brand-secondary);
+  }
+
+  main.article p.author {
+    margin-bottom: 2rem;
+  }
+  main.article .article-body {
+    max-width: 660px;
+    font-size: 1.25rem; /* 20px default*/
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+ 
 
 /* forms & buttons */
 form input,
