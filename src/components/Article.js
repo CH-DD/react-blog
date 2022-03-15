@@ -1,6 +1,7 @@
 import { useParams } from "react-router";           // to grab article id
 import useFetch from "../custom-hooks/useFetch";    // custom hook
 
+
 const Article = () => {
 
     // useParams: grab current article id parameter
@@ -8,9 +9,10 @@ const Article = () => {
 
     // Fetch individual article data 
     const { data:article, isLoading, error } = useFetch("http://localhost:8000/articles/" + id);
+   
 
     return (  
-        <main className="article">
+        <main className="article-page">
 
             {/* Loading message */}
             {isLoading && 
@@ -35,7 +37,7 @@ const Article = () => {
 
             {/* article content */}
             { article && (
-                <article>
+                <article className="content-area">
                     <h2>{ article.title }</h2>
                     <p className="author">By { article.author }</p>
                     <div className="article-body">{ article.body }</div>
@@ -44,6 +46,7 @@ const Article = () => {
 
         </main>
     );
+
 }
  
 export default Article;
