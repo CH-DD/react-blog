@@ -1,5 +1,6 @@
-// Note: 'destructuring' in the ArticlesList argument allows easy access to props passed from 'Home' parent component 
+import { Link } from "react-router-dom";
 
+// Note: 'destructuring' in the ArticlesList argument allows access to props passed from 'Home' parent component 
 const ArticlesList = ({ articles, title }) => {
 
     return (  
@@ -7,12 +8,22 @@ const ArticlesList = ({ articles, title }) => {
             <h3>{ title }</h3>
 
             <section className="articles-list">
-                {/* cycle through each item in articles array - all must have a unique key eg. id */}
+                
+                {/* List each article in the array */}
                 {articles.map((article) => (
-                    <article className="article-preview" key={ article.id }>
-                        <h2>{ article.title }</h2>
-                        <p>By { article.author }</p>
-                    </article>
+
+                    <Link 
+                        to={ `/articles/${article.id}` } 
+                        className="article-preview" 
+                        title="Read the article"
+                    >
+                        <article key={ article.id }>
+                            <h2>{ article.title }</h2>
+                            <p>By { article.author }</p>
+                       
+                        </article>
+                    </Link>
+
                 ))}
             </section>
         </>
