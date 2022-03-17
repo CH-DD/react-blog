@@ -7,13 +7,24 @@ const CreateArticle = () => {
     const [ body, setBody ] = useState("");             // initially empty
     const [ author, setAuthor ] = useState("Mario");    // inc. default value
 
+    // Handle form submission
+    const handleSubmit = (event) => {
+
+        // prevent default action: page refresh when button is pressed
+        event.preventDefault();
+
+        // create a new article object. note: json-server automatically generates an id.
+        const article = { title, body, author };
+        console.log(article);
+    }
 
     return (  
         <main className="create-article">
             <section className="content-area">
                 <h2>Add new article</h2>
 
-                <form>
+                {/* onSubmit event: fired automatically when a form submit button in pressed. Attach it to a function. */}
+                <form onSubmit={ handleSubmit }>
                     <label>Title </label>
                     <input 
                         type="text"
@@ -45,7 +56,7 @@ const CreateArticle = () => {
                     </select>
 
                     <button>
-                        <span class="material-icons">publish</span> Publish
+                        <span className="material-icons">publish</span> Publish
                     </button>
 
                 </form>
@@ -53,11 +64,11 @@ const CreateArticle = () => {
             </section>
 
             {/* temporary testing stuff */}
-            <h4>Enter some values to test 2 way binding...</h4>
+            {/* <h4>Enter some values to test 2 way binding...</h4>
             <p>Title text: { title }</p>
             <p>Body text: { body }</p>
             <p>Author: { author }</p>
-            
+             */}
         </main>
     );
 }
