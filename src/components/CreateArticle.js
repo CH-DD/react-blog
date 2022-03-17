@@ -1,4 +1,5 @@
-import { useState } from "react";   
+import { useState } from "react";  
+import { useNavigate } from "react-router-dom";
 
 const CreateArticle = () => {
 
@@ -9,6 +10,10 @@ const CreateArticle = () => {
 
     // Loading message whilst posting article & waiting for submission
     const [isLoading, setIsLoading] = useState(false);  // initial value: true
+
+    // useNavigate: access navigation history & redirect after form submission
+    const navigate = useNavigate();
+
 
     // Handle form submission
     const handleSubmit = (event) => {
@@ -29,9 +34,10 @@ const CreateArticle = () => {
             body: JSON.stringify(article)  // convert object to json for the server
 
         }).then(() => {  // async function when promise returned & posting is complete
-            console.log("New article has been added");
-            setIsLoading(false); // set loading status
-        })
+            setIsLoading(false);    // set loading status
+            navigate("/");          // redirect to homepage 
+        })      
+
     }
 
     return (  
@@ -81,7 +87,6 @@ const CreateArticle = () => {
                 </form>
 
             </section>
-
         </main>
     );
 }
