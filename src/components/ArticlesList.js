@@ -13,11 +13,12 @@ const ArticlesList = ({ articles, title }) => {
                 {articles.map((article) => (
 
                     <Link 
+                        key={ article.id }
                         to={ `/articles/${article.id}` } 
                         className="article-preview" 
                         title="Read the article"
                     >
-                        <article key={ article.id }>
+                        <article>
                             <h2>{ article.title }</h2>
                             <p className="author">By { article.author }</p>
                        
