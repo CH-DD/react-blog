@@ -5,7 +5,10 @@ const CreateArticle = () => {
     // State: for form input values
     const [ title, setTitle ] = useState("");           // initially empty
     const [ body, setBody ] = useState("");             // initially empty
-    const [ author, setAuthor ] = useState("Mario");    // inc. default value
+    const [ author, setAuthor ] = useState("Chris");    // inc. default value
+
+    // Loading message whilst posting article & waiting for submission
+    const [isLoading, setIsLoading] = useState(false);  // initial value: true
 
     // Handle form submission
     const handleSubmit = (event) => {
@@ -13,9 +16,22 @@ const CreateArticle = () => {
         // prevent default action: page refresh when button is pressed
         event.preventDefault();
 
-        // create a new article object. note: json-server automatically generates an id.
+        // create a new article object. note: json-server automatically generates id.
         const article = { title, body, author };
-        console.log(article);
+
+        // set loading status during submission
+        setIsLoading(true);
+
+        // make post request (using json-server). arguments: 1. url. 2. request details.
+        fetch("http://localhost:8000/articles", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(article)  // convert object to json for the server
+
+        }).then(() => {  // async function when promise returned & posting is complete
+            console.log("New article has been added");
+            setIsLoading(false); // set loading status
+        })
     }
 
     return (  
@@ -50,25 +66,22 @@ const CreateArticle = () => {
                         value={ author }
                         onChange={(event) => setAuthor(event.target.value)}
                     >
-                        <option value="Mario">Mario</option>
-                        <option value="Yoshi">Yoshi</option>
-                        <option value="Luigi">Luigi</option>
+                        <option value="Chris">Chris</option>
+                        <option value="Guest">Guest</option>
                     </select>
 
-                    <button>
+                    {/* show different buttons depending on submission status */}
+                    { !isLoading && <button> 
                         <span className="material-icons">publish</span> Publish
-                    </button>
+                    </button> } 
+                    { isLoading && <button disabled>
+                        <span className="material-icons">publish</span> Publishing...
+                    </button> }
 
                 </form>
 
             </section>
 
-            {/* temporary testing stuff */}
-            {/* <h4>Enter some values to test 2 way binding...</h4>
-            <p>Title text: { title }</p>
-            <p>Body text: { body }</p>
-            <p>Author: { author }</p>
-             */}
         </main>
     );
 }
