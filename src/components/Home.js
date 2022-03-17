@@ -1,8 +1,11 @@
-import useFetch from "../custom-hooks/useFetch";    // custom hook
+import { PageTitle } from "../utils/PageTitle";
+import useFetch from "../utils/useFetch";           // custom hook
 import ArticlesList from "./ArticlesList";          // component
 
 
 const Home = () => {
+    // Set page title
+    PageTitle("console.blog - Coding talk");
 
     // Fetch articles data 
     // Use custom 'useFetch' hook: pass in custom url & rename returned 'data' variable to be 'articles'

@@ -1,7 +1,11 @@
 import { useState } from "react";  
 import { useNavigate } from "react-router-dom";
+import { PageTitle } from "../utils/PageTitle";
 
 const CreateArticle = () => {
+
+    // Set page title
+    PageTitle("New article | console.blog");
 
     // State: for form input values
     const [ title, setTitle ] = useState("");           // initially empty
@@ -42,7 +46,7 @@ const CreateArticle = () => {
     return (  
         <main className="create-article">
             <section className="content-area">
-                <h2>Add new article</h2>
+                <h1>Add new article</h1>
 
                 {/* onSubmit event: fired automatically when a form submit button in pressed. Attach it to a function. */}
                 <form onSubmit={ handleSubmit }>

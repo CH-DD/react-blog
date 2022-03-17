@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
+import { PageTitle } from "../utils/PageTitle";
 
 const ErrorNotFound = () => {
+
+    // Set page title
+    PageTitle("Page not found | console.blog");
+
     return (  
         <main className="error-page">
             <section className="content-area">

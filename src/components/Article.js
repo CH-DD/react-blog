@@ -1,6 +1,7 @@
 import { useParams } from "react-router";           // to grab article id
-import useFetch from "../custom-hooks/useFetch";    // custom hook
+import useFetch from "../utils/useFetch";           // custom hook
 import { useNavigate } from "react-router-dom";
+import { PageTitle } from "../utils/PageTitle";
 
 const Article = () => {
 
@@ -14,6 +15,7 @@ const Article = () => {
     // Fetch individual article data 
     const { data: article, isLoading, error } = useFetch("http://localhost:8000/articles/" + id);
 
+
     // Delete an article on button click
     const handleClick = () => {
 
@@ -25,7 +27,9 @@ const Article = () => {
         })
     }
    
-
+    // Set page title
+    PageTitle( article.title + " | console.blog");
+    
     return (  
         <main className="article-page">
 
@@ -47,7 +51,7 @@ const Article = () => {
             {/* article content */}
             { article && (
                 <article className="content-area">
-                    <h2>{ article.title }</h2>
+                    <h1>{ article.title }</h1>
                     <p className="author">By { article.author }</p>
                     <div className="article-body">{ article.body }</div>
                     <button className="delete" onClick={ handleClick }>Delete</button>
