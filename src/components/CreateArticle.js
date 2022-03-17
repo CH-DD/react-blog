@@ -14,7 +14,6 @@ const CreateArticle = () => {
     // useNavigate: access navigation history & redirect after form submission
     const navigate = useNavigate();
 
-
     // Handle form submission
     const handleSubmit = (event) => {
 
