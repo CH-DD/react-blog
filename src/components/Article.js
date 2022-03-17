@@ -11,7 +11,6 @@ const Article = () => {
     // useNavigate: to access navigation history & redirect after deleting article
     const navigate = useNavigate();
 
-
     // Fetch individual article data 
     const { data: article, isLoading, error } = useFetch("http://localhost:8000/articles/" + id);
 
@@ -26,10 +25,11 @@ const Article = () => {
             navigate("/");  // redirect to homepage
         })
     }
+
+    // Set page title - after article data has been fetched. Otherwise could return null for article.title and cause error.
+    article && (PageTitle( article.title + " | console.blog"));
    
-    // Set page title
-    PageTitle( article.title + " | console.blog");
-    
+ 
     return (  
         <main className="article-page">
 
@@ -56,9 +56,13 @@ const Article = () => {
                     <div className="article-body">{ article.body }</div>
                     <button className="delete" onClick={ handleClick }>Delete</button>
                 </article>
-            )}
 
+                
+            )}
+    
+    
         </main>
+        
     );
 
 }
