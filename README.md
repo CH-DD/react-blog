@@ -7,17 +7,18 @@
 ![image](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 
 
-## Video Preview
-https://www.youtube.com/watch?v=uxhnHY0qNsE
-
 ## About the App
-A quick personal project created to recap the fundamentals of the React framework. 
-
-Built relatively quickly in March 2022 - following completion of the [Northcoders](https://northcoders.com/) software development bootcamp. 
+A quick solo project created to recap the fundamentals of the [React](https://reactjs.org/) framework. 
 
 The user can browse a list of blog articles, add new articles, and delete articles from the database. Articles can be assigned a title, author and body text.
 
 Incorporates a basic responsive design that adapts to different screen sizes.
+
+Built relatively quickly in March 2022 - following completion of the [Northcoders](https://northcoders.com/) software development bootcamp. 
+
+[![Play now](https://user-images.githubusercontent.com/68435229/158999649-90bf650d-f46a-4aae-8090-3671532b151d.png)](https://www.youtube.com/watch?v=uxhnHY0qNsE)
+
+[YouTube preview (0:52)](https://www.youtube.com/watch?v=uxhnHY0qNsE)
 
 
 ## Technology used
@@ -79,3 +80,4 @@ Also, articles currently contain placeholder content.
 - [Google Fonts](https://fonts.google.com/) - Web font and Material Icons
 - [Node.js](https://nodejs.org/) - JavaScript runtime environment
 - [npm](https://www.npmjs.com/) - Node.js package manager
+- [The Net Ninja](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d) - fantastic series of React tutorials
