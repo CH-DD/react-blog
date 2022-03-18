@@ -57,14 +57,17 @@ main {
   border-bottom: 1px solid var(--col-dividers-borders);
   padding: 20px 0;
 }
-.navbar h1.logo  {
+.navbar a.logo h1  {
   font-size: 2rem;   /* 36px default */
   font-weight: bold;
   margin-bottom: 0;
 }
-.navbar h1.logo strong {
+.navbar a.logo h1 strong {
   color: var(--col-brand-secondary);
   font-weight: 400;
+}
+.navbar a.logo:hover {
+  text-decoration: none;
 }
 .navbar .links {
   margin-left: auto;

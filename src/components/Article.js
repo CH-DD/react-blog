@@ -14,7 +14,6 @@ const Article = () => {
     // Fetch individual article data 
     const { data: article, isLoading, error } = useFetch("http://localhost:8000/articles/" + id);
 
-
     // Delete an article on button click
     const handleClick = () => {
 
@@ -56,13 +55,9 @@ const Article = () => {
                     <div className="article-body">{ article.body }</div>
                     <button className="delete" onClick={ handleClick }>Delete</button>
                 </article>
-
-                
             )}
-    
-    
+
         </main>
-        
     );
 
 }
