@@ -1,81 +1,81 @@
-# React Blog 
-## A project created to recap the fundamentals of React
+# console.blog - A blog app built in React
 
-Following this YouTube tutorial by The Net Ninja:
+![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![image](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![image](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![image](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 
-[Full Modern React Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d)  
 
-Also see updated version of [React Router (6)](https://www.youtube.com/watch?v=WfpmvgVZD1A&list=PL4cUxeGkcC9h7F1LWaQ7MAI8ptg5VjvxJ)
+## Video Preview
+https://www.youtube.com/watch?v=uxhnHY0qNsE
 
--------------------------
+## About the App
+A quick personal project created to recap the fundamentals of the React framework. 
 
-# Getting Started with Create React App
+Built relatively quickly in March 2022 - following completion of the [Northcoders](https://northcoders.com/) software development bootcamp. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The user can browse a list of blog articles, add new articles, and delete articles from the database. Articles can be assigned a title, author and body text.
 
-## Available Scripts
+Incorporates a basic responsive design that adapts to different screen sizes.
 
-In the project directory, you can run:
 
-### `npm start`
+## Technology used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+React/Node.js for the front end framework, along with the 'json-server' package to mimic a REST API back end. This creates a 'dummy' server on the local machine, to serve up API-style data during development.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Built using resusable React components, and both built-in and custom hooks to manage features such as state, data fetching, error handling and custom page titles. React Router v6 was used to manage endpoints. 
 
-### `npm test`
+Data is stored in a local JSON file - which is converted into API-style 'fetchable' data by running the 'json-server' module.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The user interface features a 'responsive' CSS grid-based layout, with web fonts and icons imported from Google Fonts.
 
-### `npm run build`
+## Run the App Locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Follow these steps to run a local version of the project.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Requirements
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Node.js](https://nodejs.org/en/) v. 17.0.1 or higher (JavaScript runtime environment)
+- [npm](https://www.npmjs.com/package/npm) (JavaScript package manager)
 
-### `npm run eject`
+### Clone, and Install Dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- First, download the project into a local folder. In your terminal, run:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  `git clone https://github.com/CH-DD/react-blog.git` (if using HTTPS)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  `git clone git@github.com:CH-DD/react-blog.git` (if using SSH)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Then navigate into the new folder, and install dependencies:
 
-## Learn More
+  `cd react-blog`
+  
+  `npm install`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Running the App
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Once the above steps are complete, the app can be run locally and viewed in your web browser.
 
-### Code Splitting
+First, start the local API server. This is set to run on port 8000, with the database found at [localhost:8000/articles](http://localhost:8000/articles).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+`npm run json-server`
 
-### Analyzing the Bundle Size
+Then, in a new Terminal instance, run the React project. This should run on port 3000, and open automatically in your browser at [localhost:3000](http://localhost:3000).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+`npm run start`
 
-### Making a Progressive Web App
+## Functionality
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Please note - there is currently a 'setTimeout' function used in the 'useFetch' custom hook, to simulate the delay of a typical web server when fetching data locally. This would be removed in a production build.
 
-### Advanced Configuration
+Similarly, the API would also be set up on a live server - as opposed to using the local 'json-server' features.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Also, articles currently contain placeholder content.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Credits
+- [React](https://reactjs.org/) - Front end framework
+- [json-server](https://www.npmjs.com/package/json-server) - 'Fake local API' features
+- [Google Fonts](https://fonts.google.com/) - Web font and Material Icons
+- [Node.js](https://nodejs.org/) - JavaScript runtime environment
+- [npm](https://www.npmjs.com/) - Node.js package manager
