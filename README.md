@@ -1,14 +1,10 @@
 # console.blog - A blog app built in React
 
-![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![image](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
-![image](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![image](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![image](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) ![image](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![image](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 
 
 ## About the App
-A quick solo project created to recap the fundamentals of the [React](https://reactjs.org/) framework. 
+A quick solo project created to recap the fundamentals of [React.js](https://reactjs.org/). 
 
 The user can browse a list of blog articles, add new articles, and delete articles from the database. Articles can be assigned a title, author and body text.
 
@@ -23,7 +19,7 @@ Built relatively quickly in March 2022 - following completion of the [Northcoder
 
 ## Technology used
 
-React/Node.js for the front end framework, along with the 'json-server' package to mimic a REST API back end. This creates a 'dummy' server on the local machine, to serve up API-style data during development.
+React/Node.js for the front end, along with the 'json-server' package to mimic a REST API back end. This creates a 'dummy' server on the local machine, to serve up API-style data during development.
 
 Built using resusable React components, and both built-in and custom hooks to manage features such as state, data fetching, error handling and custom page titles. React Router v6 was used to manage endpoints. 
 
@@ -75,7 +71,7 @@ Similarly, the API would also be set up on a live server - as opposed to using t
 Also, articles currently contain placeholder content.
 
 ## Credits
-- [React](https://reactjs.org/) - Front end framework
+- [React](https://reactjs.org/) - Front end development library
 - [json-server](https://www.npmjs.com/package/json-server) - 'Fake local API' features
 - [Google Fonts](https://fonts.google.com/) - Web font and Material Icons
 - [Node.js](https://nodejs.org/) - JavaScript runtime environment
